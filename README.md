@@ -10,6 +10,7 @@ This project implements an ETL (Extract, Transform, Load) pipeline to fetch glob
 - A **Python script** extracts data from **Spotify's API**.
 - This process is automated using **AWS Lambda**, triggered daily by **Amazon CloudWatch**.
 - The extracted raw data is stored in an **Amazon S3 bucket**.
+  
 ![Extraction](images/extract.PNG)
 
 ### **2. Transformation**
@@ -17,6 +18,10 @@ This project implements an ETL (Extract, Transform, Load) pipeline to fetch glob
 - The transformed data is then stored back in **S3**.
 - **AWS triggers** automate the transformation process upon data arrival.
 
+![Extraction](images/load.PNG)
+
 ### **3. Loading**
 - The transformed data is loaded into **Snowflake** using **Snowpipe**.
 - AWS and Snowflake integration ensures seamless data transfer.
+
+![Extraction](images/album.png)
