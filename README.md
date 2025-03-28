@@ -1,22 +1,22 @@
 # Spotify ETL Pipeline using AWS & Snowflake
+This project implements an ETL (Extract, Transform, Load) pipeline to fetch global trending songs from Spotify's API and process the data using AWS and Snowflake.
+
+## Pipeline Overview:
 
 ![Spotify ETL Architecture](images/arch.png)
 
-# Project Overview 
 
-This Spotify ETL Architecture in AWS Cloud automates data extraction, transformation, and loading into Snowflake for analysis.
+Extraction:
+        A Python script extracts data from Spotify's API.
+        This process is automated using AWS Lambda, triggered daily by Amazon CloudWatch.
+        The extracted raw data is stored in an Amazon S3 bucket.
 
-Extract:
-    Spotify API: Fetches streaming data.
-    AWS Lambda: Extracts data from the API.
-    Amazon CloudWatch: Triggers the Lambda function daily.
-    Amazon S3 (Raw Data): Stores extracted data.
-   
-Transform:
-    S3 Trigger: Detects new raw data and triggers transformation.
-    AWS Lambda: Processes and cleans the data.
-    Amazon S3 (Transformed Data): Stores the cleaned data.
+Transformation:
+        The raw data is retrieved from S3 and transformed using AWS Lambda.
+        The transformed data is then stored back in S3.
+        AWS triggers automate the transformation process upon data arrival.
 
-Load:
-    Snowpipe: Automates loading of transformed data into Snowflake.
-    Snowflake: Stores structured data for analytics.
+Loading:
+        The transformed data is loaded into Snowflake using Snowpipe.
+        AWS and Snowflake integration ensures seamless data transfer.
+        
