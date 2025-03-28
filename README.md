@@ -10,7 +10,7 @@ This project implements an ETL (Extract, Transform, Load) pipeline to fetch glob
 - A **Python script** extracts data from **Spotify's API**.
 - This process is automated using **AWS Lambda**, triggered daily by **Amazon CloudWatch**.
 - The extracted raw data is stored in an **Amazon S3 bucket**.
-![Extraction](images/extract.png)
+![Extraction](images/extract.PNG)
 
 ### **2. Transformation**
 - The raw data is retrieved from **S3** and transformed using **AWS Lambda**.
